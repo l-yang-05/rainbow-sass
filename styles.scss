@@ -1,0 +1,52 @@
+// Assigning a variable named colors
+$colors:red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet;
+
+
+            /* Defining the class "rainbow" properties. "rainbow" is considered the Block in BEM (Block, Element, Modifier) meaning that it is the outermost parent element of the 
+            component */
+
+            /*BEM is a naming convention for CSS that helps distinguish relationships between HTML and CSS in a given project. */
+            .rainbow {
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                    /*Here I am creating a element "box" for the box "rainbow", meaning that these elements are parts of a block that don't have standalone meaning.
+                    "box" is tied to the box "rainbow"*/
+                    &__box {
+                        // border: solid 2px white;
+                        // border-radius: 20px;
+                        height: 150px;
+                        width: 20%;
+                        margin: 5px;
+                    }
+
+                    /*Create @each loop here that will loop each color in $colors and assign it a class name dedicated to the respective color and adding the 
+                    property of background-color.*/
+                    @each $color in $colors {
+                        .rainbow__box--#{$color}{
+                            background-color: #{$color};
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 35px;  
+                            font-weight: bold;                          
+                            color: white;
+                            -webkit-text-stroke-width: 1px;
+                            -webkit-text-stroke-color: black;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                         
+                        .rainbow__box--#{$color}:hover {
+                            background-color: lighten($color, 20% );
+                        }
+                    }
+                }
+

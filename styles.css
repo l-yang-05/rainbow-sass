@@ -1,0 +1,186 @@
+/* Defining the class "rainbow" properties. "rainbow" is considered the Block in BEM (Block, Element, Modifier) meaning that it is the outermost parent element of the 
+            component */
+/*BEM is a naming convention for CSS that helps distinguish relationships between HTML and CSS in a given project. */
+.rainbow {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /*Here I am creating a element "box" for the box "rainbow", meaning that these elements are parts of a block that don't have standalone meaning.
+                    "box" is tied to the box "rainbow"*/
+  /*Create @each loop here that will loop each color in $colors and assign it a class name dedicated to the respective color and adding the 
+                    property of background-color.*/
+}
+
+.rainbow__box {
+  height: 150px;
+  width: 20%;
+  margin: 5px;
+}
+
+.rainbow .rainbow__box--red {
+  background-color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rainbow .rainbow__box--red:hover {
+  background-color: #ff6666;
+}
+
+.rainbow .rainbow__box--orange {
+  background-color: orange;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rainbow .rainbow__box--orange:hover {
+  background-color: #ffc966;
+}
+
+.rainbow .rainbow__box--yellow {
+  background-color: yellow;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rainbow .rainbow__box--yellow:hover {
+  background-color: #ffff66;
+}
+
+.rainbow .rainbow__box--green {
+  background-color: green;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rainbow .rainbow__box--green:hover {
+  background-color: #00e600;
+}
+
+.rainbow .rainbow__box--blue {
+  background-color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rainbow .rainbow__box--blue:hover {
+  background-color: #6666ff;
+}
+
+.rainbow .rainbow__box--indigo {
+  background-color: indigo;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rainbow .rainbow__box--indigo:hover {
+  background-color: #8600e8;
+}
+
+.rainbow .rainbow__box--violet {
+  background-color: violet;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rainbow .rainbow__box--violet:hover {
+  background-color: #fadcfa;
+}
+/*# sourceMappingURL=styles.css.map */
