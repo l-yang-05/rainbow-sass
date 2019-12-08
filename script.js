@@ -96,11 +96,6 @@ $(function () {
 
         addPoints(-buttonHeight / 10, buttonHeight / 2);
         addPoints(buttonHeight / 5, 0);
-        // addPoints(x, 0);
-        // addPoints(0, buttonHeight/2);
-
-        // addPoints(0, buttonHeight/2);
-        // addPoints(buttonHeight/4, 0);
 
         // Start render
         renderCanvas();
@@ -189,14 +184,8 @@ $(function () {
 
         for (var j = 0; j <= 1; j++) {
             var points = groups[j];
+            context.fillStyle = gradient;
 
-            if (j == 0) {
-                // Background style
-                context.fillStyle = '#1CE2D8';
-            } else {
-                // Foreground style
-                context.fillStyle = gradient;
-            }
 
             context.beginPath();
             context.moveTo(points[0].x, points[0].y);
@@ -207,28 +196,6 @@ $(function () {
                 var val = 30 * 0.552284749831;
 
                 if (nextP != undefined) {
-                    // if (nextP.ix > p.ix && nextP.iy < p.iy) {
-                    // 	p.cx1 = p.x;
-                    // 	p.cy1 = p.y-val;
-                    // 	p.cx2 = nextP.x-val;
-                    // 	p.cy2 = nextP.y;
-                    // } else if (nextP.ix > p.ix && nextP.iy > p.iy) {
-                    // 	p.cx1 = p.x+val;
-                    // 	p.cy1 = p.y;
-                    // 	p.cx2 = nextP.x;
-                    // 	p.cy2 = nextP.y-val;
-                    // }  else if (nextP.ix < p.ix && nextP.iy > p.iy) {
-                    // 	p.cx1 = p.x;
-                    // 	p.cy1 = p.y+val;
-                    // 	p.cx2 = nextP.x+val;
-                    // 	p.cy2 = nextP.y;
-                    // } else if (nextP.ix < p.ix && nextP.iy < p.iy) {
-                    // 	p.cx1 = p.x-val;
-                    // 	p.cy1 = p.y;
-                    // 	p.cx2 = nextP.x;
-                    // 	p.cy2 = nextP.y+val;
-                    // } else {
-
                     p.cx1 = (p.x + nextP.x) / 2;
                     p.cy1 = (p.y + nextP.y) / 2;
                     p.cx2 = (p.x + nextP.x) / 2;

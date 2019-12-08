@@ -59,13 +59,17 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
   background-color: white;
-  width: 1000px;
+  overflow: hidden;
+  padding: 50px;
+  width: 750px;
+  height: 500px;
+  -webkit-box-shadow: black 2px 10px 25px;
+          box-shadow: black 2px 10px 25px;
+  z-index: 100;
 }
 
-.liquid__container {
+.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,12 +83,56 @@ body {
       flex-wrap: wrap;
 }
 
-button {
+.second-row {
+  margin: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn-liquid {
+  display: inline-block;
+  position: relative;
+  width: 240px;
+  height: 60px;
+  color: #fff;
+  font: 700 14px/60px "Droid Sans", sans-serif;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-liquid__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-liquid canvas {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  bottom: -50px;
+  left: -50px;
+  z-index: -1;
+}
+
+.sketch {
+  position: absolute;
+}
+
+.fill {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 25px 50px;
-  margin: 25px;
+  padding: 15px 40px;
+  margin: 10px;
   border-radius: 999px;
   border: 5px solid black;
   font-size: 25px;
@@ -100,46 +148,208 @@ button {
   background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
   background-repeat: repeat-x;
   background-position: 0 -100%;
-  -webkit-transition: 1.5s ease;
-  transition: 1.5s ease;
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
 }
 
-button:hover {
+.fill:hover {
   background-position: 500% 100%;
 }
 
-button:nth-child(1) {
+.fill:nth-child(1) {
   -webkit-filter: hue-rotate(20deg);
           filter: hue-rotate(20deg);
 }
 
-button:nth-child(2) {
-  -webkit-filter: hue-rotate(40deg);
-          filter: hue-rotate(40deg);
+.glow {
+  border-radius: 40px;
+  border: green solid 5px;
+  color: green;
+  height: 65px;
+  width: 250px;
+  font-size: 25px;
+  margin: 5px;
+  background: transparent;
 }
 
-button:nth-child(3) {
-  -webkit-filter: hue-rotate(60deg);
-          filter: hue-rotate(60deg);
+.glow:hover {
+  -webkit-box-shadow: lightgreen 2px 2px 20px;
+          box-shadow: lightgreen 2px 2px 20px;
+  text-shadow: lightgreen 2px 2px 20px;
 }
 
-button:nth-child(4) {
-  -webkit-filter: hue-rotate(80deg);
-          filter: hue-rotate(80deg);
+.shiney {
+  padding: 12px 70px;
+  text-align: center;
+  text-align: center;
+  text-decoration: none;
+  color: #0d67a3;
+  border: 2px solid #0d67a3;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 0.3em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
-button:nth-child(5) {
-  -webkit-filter: hue-rotate(100deg);
-          filter: hue-rotate(100deg);
+.shiney:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  -webkit-transform: skewX(-45deg) translateX(0);
+          transform: skewX(-45deg) translateX(0);
+  -webkit-transition: none;
+  transition: none;
 }
 
-button:nth-child(6) {
-  -webkit-filter: hue-rotate(120deg);
-          filter: hue-rotate(120deg);
+.shiney:hover {
+  background-color: #284cff;
+  color: #fff;
+  border-bottom: 4px solid #0029f4;
 }
 
-button:nth-child(7) {
-  -webkit-filter: hue-rotate(140deg);
-          filter: hue-rotate(140deg);
+.shiney:hover:before {
+  -webkit-transform: skewX(-45deg) translateX(13.5em);
+          transform: skewX(-45deg) translateX(13.5em);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+@-webkit-keyframes sheen {
+  0% {
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+@keyframes sheen {
+  0% {
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+.pulse {
+  background: none;
+  border: 2px solid #ef6eae;
+  font: inherit;
+  line-height: 1;
+  padding: 12px 80px;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.pulse:hover, .pulse :focus {
+  -webkit-animation: pulsing 1s;
+          animation: pulsing 1s;
+  -webkit-box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+          box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes pulsing {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #fb0e85;
+            box-shadow: 0 0 0 0 #fb0e85;
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #fb0e85;
+            box-shadow: 0 0 0 0 #fb0e85;
+  }
+}
+
+.drip {
+  color: #fff;
+  font-weight: normal;
+  font-size: 25px;
+  background: #630fe8;
+  border-radius: 50px;
+  padding: 15px 100px;
+  border: none;
+  margin: 10px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  -webkit-box-shadow: 0 15px 60px -5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 15px 60px -5px rgba(0, 0, 0, 0.5);
+}
+
+.drip:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+}
+
+.drip--1 {
+  position: absolute;
+  width: 19px;
+  height: 0px;
+  border-radius: 0 0 21px 21px;
+  background: #630fe8;
+  margin: -30px 350px;
+  -webkit-transition: 0.9s ease;
+  transition: 0.9s ease;
+}
+
+.drip:hover + .drip--1 {
+  height: 50px;
+}
+
+.drip:hover ~ .drip--1 {
+  height: 50px;
+}
+
+.drip--2 {
+  position: absolute;
+  width: 19px;
+  height: 0px;
+  border-radius: 0 0 21px 21px;
+  background: #630fe8;
+  margin: -30px 330px;
+  -webkit-transition: 1.5s ease;
+  transition: 1.5s ease;
+}
+
+.drip:hover + .drip--2 {
+  height: 80px;
+}
+
+.drip:hover ~ .drip--2 {
+  height: 80px;
+}
+
+.drip--3 {
+  position: absolute;
+  width: 19px;
+  height: 0px;
+  border-radius: 0 0 21px 21px;
+  background: #630fe8;
+  margin: -30px 200px;
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+}
+
+.drip:hover + .drip--3 {
+  height: 30px;
+}
+
+.drip:hover ~ .drip--3 {
+  height: 30px;
 }
 /*# sourceMappingURL=styles.css.map */

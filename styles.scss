@@ -14,7 +14,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 @keyframes gradientBG {
@@ -30,51 +29,219 @@ body {
 }
 
 
-
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-flow: wrap;
-  background-color: white;
-  width: 1000px;
-}
-
-
-.liquid__container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    background-color: white;
+    overflow:hidden;
+    padding:50px;
+    width: 750px;
+    height: 500px;
+    box-shadow: black 2px 10px 25px;
+    z-index: 100;
+  }
+  
+  
+  .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+  }
+  
+
+  .second-row{
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-$color: #284cff;
+  $color: #284cff;
 
+.btn-liquid {
+	display: inline-block;
+	position: relative;
+	width: 240px;
+	height: 60px;
+	color: #fff;
+	font: 700 14px/60px "Droid Sans", sans-serif;
+	letter-spacing: 0.05em;
+	text-align: center;
+	text-decoration: none;
+    text-transform: uppercase;
+        &__inner{
+            position: relative;
+            z-index: 2;
+        }
+}
 
-button {
-  flex: 1;
-  padding: 25px 50px;
-  margin: 25px;
-  border-radius: 999px;
-  border: 5px solid black;
-  font-size: 25px;
-  text-shadow: 0 3px 5px rgba(#000, 0.25);
-  white-space: nowrap;
-  color: black;
-  cursor: pointer;
-  user-select: none;
-  background: transparent;
-  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
-  background-repeat: repeat-x;
-  background-position: 0 -100%;
-  transition: 1.5s ease;
-  &:hover {
-    background-position: 500% 100%;
+.btn-liquid canvas {
+	position: absolute;
+	top: -50px;
+	right: -50px;
+	bottom: -50px;
+	left: -50px;
+	z-index: -1;
+}
+
+.sketch{
+    position: absolute;
+}
+
+.fill {
+    flex: 1;
+    padding: 15px 40px;
+    margin: 10px;
+    border-radius: 999px;
+    border: 5px solid black;
+    font-size: 25px;
+    text-shadow: 0 3px 5px rgba(#000, 0.25);
+    white-space: nowrap;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    background: transparent;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 2s ease;
+    &:hover {
+      background-position: 500% 100%;
+    }
+    @for $i from 1 through 1 {
+      &:nth-child(#{$i}) {
+        filter: hue-rotate(($i * 20) + deg);
+      }
+    }
   }
-  @for $i from 1 through 7 {
-    &:nth-child(#{$i}) {
-      filter: hue-rotate(($i * 20) + deg);
+
+
+.glow{
+    border-radius: 40px;
+    border: green solid 5px;
+    color: green;
+    height: 65px;
+    width: 250px;
+    font-size: 25px;
+    margin:5px;
+    background: transparent;
+        &:hover{
+            box-shadow: lightgreen 2px 2px 20px;
+            text-shadow: lightgreen 2px 2px 20px;
+        }
+}
+
+
+$shine: rgb(13, 103, 163);
+
+.shiney {
+  padding: 12px 70px;
+  text-align: center;
+  text-align: center;
+  text-decoration: none;
+  color: $shine;
+  border: 2px solid $shine;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover {
+    background-color: $color;
+    color: #fff;
+    border-bottom: 4px solid darken($color, 10%);
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+     transition: all 0.5s ease-in-out;
     }
   }
 }
+
+@keyframes sheen {
+    0% {
+      transform: skewY(-45deg) translateX(0);
+    }
+    100% {
+      transform: skewY(-45deg) translateX(12.5em);
+    }
+  }  
+
+.pulse{
+    background: none;
+    border: 2px solid #ef6eae;
+    font: inherit;
+    line-height: 1;
+    padding: 12px 80px;
+    margin-left: 35px;
+    margin-right: 35px;
+    &:hover, :focus {
+      animation: pulsing 1s;
+      box-shadow: 0 0 0 2em rgba(#fff,0);
+    }
+    
+    @keyframes pulsing {
+      0% { box-shadow: 0 0 0 0 #fb0e85; }
+    }    
+}
+
+$streams:(
+    1 (-30px 350px) (0.9s ease) 50px, 
+    2 (-30px 330px)(1.5s ease) 80px, 
+    3 (-30px 200px) (.7s ease) 30px
+    ) ; 
+
+.drip{
+  color: #fff;
+  font-weight: normal;
+  font-size: 25px;
+  background: #630fe8;
+  border-radius: 50px;
+  padding: 15px 100px;
+  border: none;
+  margin:10px;
+  transition: .5s ease;
+  box-shadow: 0 15px 60px -5px rgba(0, 0, 0, .5);
+    &:hover{
+        box-shadow: none;
+        cursor: pointer;
+    }
+
+    @each $stream, $position, $transition, $height in $streams{
+        &--#{$stream}{
+            position:absolute;
+            width:19px;
+            height:0px;
+            border-radius:0 0 21px 21px;
+            background:#630fe8;
+            margin: $position;
+            transition: $transition;
+        }
+        &:hover + .drip--#{$stream}{
+            height: $height;
+        }
+        &:hover ~ .drip--#{$stream}{
+            height: $height;
+        }
+    }
+}
+    
+    
+  
+
+
