@@ -1,36 +1,15 @@
-/* Defining the class "rainbow" properties. "rainbow" is considered the Block in BEM (Block, Element, Modifier) meaning that it is the outermost parent element of the 
-            component */
-/*BEM is a naming convention for CSS that helps distinguish relationships between HTML and CSS in a given project. */
-.rainbow {
+body {
+  margin: 0;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  /*Here I am creating a element "box" for the box "rainbow", meaning that these elements are parts of a block that don't have standalone meaning.
-                    "box" is tied to the box "rainbow"*/
-  /*Create @each loop here that will loop each color in $colors and assign it a class name dedicated to the respective color and adding the 
-                    property of background-color.*/
-}
-
-.rainbow__box {
-  height: 150px;
-  width: 20%;
-  margin: 5px;
-}
-
-.rainbow .rainbow__box--red {
-  background-color: red;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  height: 100vh;
+  font-family: "Exo", sans-serif;
+  color: black;
+  background: red;
+  background: -webkit-gradient(linear, left top, right top, from(orange), color-stop(yellow), color-stop(green), color-stop(blue), to(violet));
+  background: linear-gradient(to right, orange, yellow, green, blue, violet);
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 20s ease infinite;
+          animation: gradientBG 20s ease infinite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,18 +21,51 @@
           align-items: center;
 }
 
-.rainbow .rainbow__box--red:hover {
-  background-color: #ff6666;
+@-webkit-keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.rainbow .rainbow__box--orange {
-  background-color: orange;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  background-color: white;
+  width: 1000px;
+}
+
+.liquid__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,124 +75,71 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.rainbow .rainbow__box--orange:hover {
-  background-color: #ffc966;
+button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 25px 50px;
+  margin: 25px;
+  border-radius: 999px;
+  border: 5px solid black;
+  font-size: 25px;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  color: black;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: transparent;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  -webkit-transition: 1.5s ease;
+  transition: 1.5s ease;
 }
 
-.rainbow .rainbow__box--yellow {
-  background-color: yellow;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+button:hover {
+  background-position: 500% 100%;
 }
 
-.rainbow .rainbow__box--yellow:hover {
-  background-color: #ffff66;
+button:nth-child(1) {
+  -webkit-filter: hue-rotate(20deg);
+          filter: hue-rotate(20deg);
 }
 
-.rainbow .rainbow__box--green {
-  background-color: green;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+button:nth-child(2) {
+  -webkit-filter: hue-rotate(40deg);
+          filter: hue-rotate(40deg);
 }
 
-.rainbow .rainbow__box--green:hover {
-  background-color: #00e600;
+button:nth-child(3) {
+  -webkit-filter: hue-rotate(60deg);
+          filter: hue-rotate(60deg);
 }
 
-.rainbow .rainbow__box--blue {
-  background-color: blue;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+button:nth-child(4) {
+  -webkit-filter: hue-rotate(80deg);
+          filter: hue-rotate(80deg);
 }
 
-.rainbow .rainbow__box--blue:hover {
-  background-color: #6666ff;
+button:nth-child(5) {
+  -webkit-filter: hue-rotate(100deg);
+          filter: hue-rotate(100deg);
 }
 
-.rainbow .rainbow__box--indigo {
-  background-color: indigo;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+button:nth-child(6) {
+  -webkit-filter: hue-rotate(120deg);
+          filter: hue-rotate(120deg);
 }
 
-.rainbow .rainbow__box--indigo:hover {
-  background-color: #8600e8;
-}
-
-.rainbow .rainbow__box--violet {
-  background-color: violet;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.rainbow .rainbow__box--violet:hover {
-  background-color: #fadcfa;
+button:nth-child(7) {
+  -webkit-filter: hue-rotate(140deg);
+          filter: hue-rotate(140deg);
 }
 /*# sourceMappingURL=styles.css.map */

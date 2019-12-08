@@ -1,52 +1,80 @@
-// Assigning a variable named colors
-$colors:red,
-        orange,
-        yellow,
-        green,
-        blue,
-        indigo,
-        violet;
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: "Exo", sans-serif;
+    color: black;
+    background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green,blue, violet);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 
-            /* Defining the class "rainbow" properties. "rainbow" is considered the Block in BEM (Block, Element, Modifier) meaning that it is the outermost parent element of the 
-            component */
 
-            /*BEM is a naming convention for CSS that helps distinguish relationships between HTML and CSS in a given project. */
-            .rainbow {
-                width: 100%;
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                    /*Here I am creating a element "box" for the box "rainbow", meaning that these elements are parts of a block that don't have standalone meaning.
-                    "box" is tied to the box "rainbow"*/
-                    &__box {
-                        // border: solid 2px white;
-                        // border-radius: 20px;
-                        height: 150px;
-                        width: 20%;
-                        margin: 5px;
-                    }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  background-color: white;
+  width: 1000px;
+}
 
-                    /*Create @each loop here that will loop each color in $colors and assign it a class name dedicated to the respective color and adding the 
-                    property of background-color.*/
-                    @each $color in $colors {
-                        .rainbow__box--#{$color}{
-                            background-color: #{$color};
-                            font-family: Arial, Helvetica, sans-serif;
-                            font-size: 35px;  
-                            font-weight: bold;                          
-                            color: white;
-                            -webkit-text-stroke-width: 1px;
-                            -webkit-text-stroke-color: black;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                        }
 
-                         
-                        .rainbow__box--#{$color}:hover {
-                            background-color: lighten($color, 20% );
-                        }
-                    }
-                }
+.liquid__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+$color: #284cff;
+
+
+button {
+  flex: 1;
+  padding: 25px 50px;
+  margin: 25px;
+  border-radius: 999px;
+  border: 5px solid black;
+  font-size: 25px;
+  text-shadow: 0 3px 5px rgba(#000, 0.25);
+  white-space: nowrap;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  &:hover {
+    background-position: 500% 100%;
+  }
+  @for $i from 1 through 7 {
+    &:nth-child(#{$i}) {
+      filter: hue-rotate(($i * 20) + deg);
+    }
+  }
+}
