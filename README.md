@@ -1,18 +1,22 @@
 ## SASS Buttons
+<kbd>
+<img src="https://github.com/l-yang-05/portfolio/blob/master/src/images/SASS.png" alt="Audit" height="500" width="auto"/>
+</kbd>
+
 This is was a fun exercise that I created for myself to get a better understanding on how to use SASS as well as experimenting around with different hover effects for buttons. I used SASS, Javascript, and JQuery to create all of the buttons and to add the special cursor effects. This website also scores 100 on web accessibility.
 
 <kbd>
-<img src="https://github.com/l-yang-05/sass-buttons/blob/master/Screen%20Shot%202019-12-08%20at%202.42.44%20PM.png" alt="Audit"/>
+<img src="https://github.com/l-yang-05/sass-buttons/blob/master/Screen%20Shot%202019-12-08%20at%202.42.44%20PM.png" alt="Audit" height="300" width="auto"/>
 </kbd>
 
 ## Built With
 
 - HTML: Markup Language used to create website
-- SASS(https://sass-lang.com/): Used to create styles
+- [SASS](https://sass-lang.com/): Used to create styles
 - JQuery: Used to create special hover effects
 - Javascript: Used to create special hover effects
-- Sketch.js: Library used to create cursor effect
-- GitHub Pages(https://pages.github.com/): Deployment of site
+- [Sketch.js](https://soulwire.github.io/sketch.js/): Library used to create cursor effect
+- [GitHub Pages](https://pages.github.com/): Deployment of site
 
 ## Author
 
